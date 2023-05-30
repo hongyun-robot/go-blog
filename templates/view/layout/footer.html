@@ -1,0 +1,7 @@
+{{ define "layout/footer" }}
+{{ range $v := .js }}
+<script src="{{$v}}"></script>
+{{ end }}
+</body>
+</html>
+{{ end }}

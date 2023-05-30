@@ -1,0 +1,19 @@
+{{ define "article/detail" }}
+{{ template "layout/header" . }}
+<div class="w-3/5 py-5 m-auto article-detail">
+    <h1 class="text-3xl font-bold text-center">{{ .data.Title }}</h1>
+    <p class="text-center my-2 flex justify-center items-center">
+        <span class="text-gray-400 mr-3">{{ timeStampFormat .data.UpdateAt }}</span>
+        {{ range $v := .data.ClassifyData }}
+        <a href="/article/list#{{$v.Name}}"
+           class="text-xs mr-1 py-0.5 px-2 text-sky-600 bg-sky-100/50 border-sky-300 border border-solid rounded-md">
+            {{ $v.Name }}
+        </a>
+        {{ end }}
+    </p>
+    <main>
+        {{ markdownToHtml .data.Content }}
+    </main>
+</div>
+{{ template "layout/footer" }}
+{{ end }}

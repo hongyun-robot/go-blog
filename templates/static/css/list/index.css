@@ -1,0 +1,17 @@
+.list-content .menu {
+    right: 5%;
+}
+
+.fadeOutUp {
+    animation-name: fadeOutUp;
+}
+
+@keyframes fadeOutUp {
+    0% {
+        height: 100%;
+        opacity: 1;
+    }
+    100% {
+        height: 10%;
+    }
+}

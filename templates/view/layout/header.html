@@ -1,0 +1,20 @@
+{{ define "layout/header" }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="{{ .title }}" />
+    <meta name="description" content="{{ .title }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/static/font/common/iconfont.css">
+    {{ range $v := .css }}
+        <link rel="stylesheet" href="{{$v}}">
+    {{ end }}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <title>{{ .title }}</title>
+</head>
+<body class="bg-gray-100 text-base">
+{{ end }}
